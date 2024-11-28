@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Ideas de Contenidos Virales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #00344B;
+        }
+        textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffe0b2;
+            border: 1px solid #ffcc80;
+            border-radius: 5px;
+            color: #e65100;
+            font-weight: bold;
+        }
+        .cta-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta-container p {
+            color: #00344B;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cta-container a {
+            display: inline-block;
+            background-color: #00DC42;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cta-container a:hover {
+            background-color: #00c03a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Ideas de Contenidos Virales</h1>
+        <p>Usa este generador para descubrir ideas creativas y virales para tus redes sociales.</p>
+
+        <form id="content-ideas-form">
+            <label for="target-audience">¿Quién es tu audiencia objetivo?</label>
+            <textarea id="target-audience" placeholder="Ejemplo: Emprendedores, estudiantes universitarios"></textarea>
+
+            <label for="platform">¿En qué plataforma publicarás el contenido?</label>
+            <textarea id="platform" placeholder="Ejemplo: Instagram, TikTok, YouTube"></textarea>
+
+            <button type="button" onclick="generateContentIdeas()">Generar Ideas</button>
+        </form>
+
+        <div id="result" class="result" style="display: none;"></div>
+
+        <div class="cta-container">
+            <p>¿CAMPO DE JUEGO O MINA DE ORO?</p>
+            <a href="https://klicana.work/ykEi0H" target="_blank">INSCRIBIRME EN MISIÓN GESTOR REDES SOCIALES</a>
+        </div>
+    </div>
+
+    <script>
+        function generateContentIdeas() {
+            const audience = document.getElementById("target-audience").value.trim();
+            const platform = document.getElementById("platform").value.trim();
+
+            if (!audience || !platform) {
+                document.getElementById("result").style.display = "block";
+                document.getElementById("result").textContent = "Por favor, completa todos los campos para generar ideas de contenido.";
+                return;
+            }
+
+            const ideas = `
+                <strong>Ideas de contenido viral para ${platform}:</strong><br>
+                - Crea un reto relacionado con ${audience}.<br>
+                - Publica historias de éxito inspiradoras.<br>
+                - Genera encuestas interactivas o dinámicas para conectar con tu audiencia.<br>
+                - Usa tendencias actuales como música o hashtags populares.<br>
+                - Desarrolla un tutorial rápido sobre un tema que interese a ${audience}.
+            `;
+
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").innerHTML = ideas;
+        }
+    </script>
+</body>
+</html>
